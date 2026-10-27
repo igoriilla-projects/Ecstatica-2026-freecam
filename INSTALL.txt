@@ -1,0 +1,40 @@
+Ecstatica free camera helper
+===========================
+
+Files: freecam.py and START_FREECAM.cmd
+Where to copy: Keep both files together. They work in this mod folder; copying
+them into D:\SteamLibrary\steamapps\common\Ecstatica is optional.
+Do not replace Ecstatica.exe. The earlier executable patch is not needed.
+
+Requirements: Windows and Python 3.10+ installed (the "py" or "python" command).
+This helper supports only the exact installed 2026 game build. It checks the
+Ecstatica.exe SHA-256 before touching game memory.
+
+Use:
+1. In the game, choose Graphics > Background > Software.
+2. Start or load a game and open the Camera Editor with F5 (as observed on
+   this installation).
+3. Double-click START_FREECAM.cmd. Click back into Ecstatica to give it focus.
+4. Fly with the keys below. The helper pauses whenever the editor closes or
+   Ecstatica loses focus.
+5. Press Ctrl+Shift+F10 while the game has focus to stop the helper, or close
+   its console window.
+
+Controls:
+  W/S                 forward/back along the camera's view
+  A/D                 left/right relative to the camera
+  Space               rise vertically in the world
+  Ctrl                descend vertically in the world
+  Hold right mouse    look around
+  Arrow keys          look around without the mouse
+  Q/E                 roll using the game's Camera Editor
+  Z/C                 roll using the helper
+  Shift               move faster
+  + / -               increase/decrease move speed
+
+If START_FREECAM.cmd closes with an error, run "python freecam.py --probe" from
+this folder. Probe mode reads the camera state and does not change it.
+
+This moves the live camera independently of the character while the Camera
+Editor is open. The game still loads and culls scenes according to its own
+world logic, so distant areas may need the player to enter them first.
